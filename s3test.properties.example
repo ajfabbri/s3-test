@@ -1,0 +1,6 @@
+# Copy this file to s3test.properties and edit.
+# All parameters are required.
+access-key=<your s3 access key here>
+secret-key=<your secret key--do not check into source control>
+bucket=<your bucket name>
+test-path=<path to "folder" inside bucket to store test files>
