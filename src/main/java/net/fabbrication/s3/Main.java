@@ -44,7 +44,7 @@ public class Main {
       System.out.println("# init");
       writeTest.init();
       System.out.println("# run");
-      writeTest.run();
+      results = writeTest.run();
     } catch (Exception ex) {
       throw new RuntimeException("Fail.", ex);
     } finally {
