@@ -22,6 +22,8 @@ java -jar target/s3-test-1.0.0-jar-with-dependencies.jar
 
 ### Example Run (US-West)
 
+Time units are microseconds.
+
 ```
 [systest@fabbri-dev-1 S3Test]$ java -jar
 target/s3-test-1.0.0-jar-with-dependencies.jar
