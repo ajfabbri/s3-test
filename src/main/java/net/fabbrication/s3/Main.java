@@ -38,21 +38,29 @@ public class Main {
   }
 
   public static void main(String[] args) {
-    WriteLatencyTest writeTest = new WriteLatencyTest(getProperties());
-    List<Stats> results = null;
-    try {
-      System.out.println("# init");
-      writeTest.init();
-      System.out.println("# run");
-      results = writeTest.run();
-    } catch (Exception ex) {
-      throw new RuntimeException("Fail.", ex);
-    } finally {
-      System.out.println("# cleanup");
-      writeTest.destroy();
-    }
-    for (Stats s : results) {
-      System.out.println(s.toString());
+    LatencyTest tests[] = {new WriteLatencyTest(getProperties()),
+        new HeadLatencyTest(getProperties())};
+
+
+    for (LatencyTest test : tests) {
+      System.out.printf("=====> Starting %s <======\n",
+          test.getClass().getSimpleName());
+
+      List<Stats> results = null;
+      try {
+        System.out.println("# init");
+        test.init();
+        System.out.println("# run");
+        results = test.run();
+      } catch (Exception ex) {
+        throw new RuntimeException("Fail.", ex);
+      } finally {
+        System.out.println("# cleanup");
+        test.destroy();
+      }
+      for (Stats s : results) {
+        System.out.println(s.toString());
+      }
     }
   }
 }

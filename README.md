@@ -1,6 +1,7 @@
 # S3 Microbenchmarks
 
-Beginning of some very basic S3 performance tests.
+Beginning of some very basic S3 performance tests. So far this includes two
+latency tests: Small write latency, and HEAD (getObjectMetadata) latency.
 
 ## S3 Write Latency Test
 
